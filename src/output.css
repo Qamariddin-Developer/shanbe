@@ -185,6 +185,9 @@
   .mt-\[33px\] {
     margin-top: 33px;
   }
+  .mr-auto {
+    margin-right: auto;
+  }
   .mb-\[18px\] {
     margin-bottom: 18px;
   }
@@ -227,11 +230,17 @@
   .ml-\[60px\] {
     margin-left: 60px;
   }
+  .block {
+    display: block;
+  }
   .flex {
     display: flex;
   }
   .hidden {
     display: none;
+  }
+  .table {
+    display: table;
   }
   .h-\[250px\] {
     height: 250px;
@@ -269,8 +278,20 @@
   .w-\[1000px\] {
     width: 1000px;
   }
+  .w-auto {
+    width: auto;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .resize {
+    resize: both;
+  }
   .flex-col {
     flex-direction: column;
+  }
+  .flex-col-reverse {
+    flex-direction: column-reverse;
   }
   .items-center {
     align-items: center;
@@ -284,6 +305,12 @@
   .justify-center {
     justify-content: center;
   }
+  .gap-\[10px\] {
+    gap: 10px;
+  }
+  .gap-\[10xp\] {
+    gap: 10xp;
+  }
   .gap-\[12px\] {
     gap: 12px;
   }
@@ -293,11 +320,19 @@
   .gap-\[48px\] {
     gap: 48px;
   }
+  .divide-lime-50 {
+    :where(& > :not(:last-child)) {
+      border-color: var(--color-lime-50);
+    }
+  }
   .overflow-auto {
     overflow: auto;
   }
   .overflow-x-auto {
     overflow-x: auto;
+  }
+  .overflow-y-auto {
+    overflow-y: auto;
   }
   .rounded-\[12px\] {
     border-radius: 12px;
@@ -314,9 +349,21 @@
   .rounded-\[40px\] {
     border-radius: 40px;
   }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-t-2 {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 2px;
+  }
   .border-t-\[3px\] {
     border-top-style: var(--tw-border-style);
     border-top-width: 3px;
+  }
+  .border-b {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
   }
   .border-black {
     border-color: var(--color-black);
@@ -411,6 +458,9 @@
   .text-center {
     text-align: center;
   }
+  .text-left {
+    text-align: left;
+  }
   .text-\[28px\] {
     font-size: 28px;
   }
@@ -433,8 +483,21 @@
   .text-\[\#504F4F\] {
     color: #504F4F;
   }
+  .text-red-400 {
+    color: var(--color-red-400);
+  }
+  .text-teal-50 {
+    color: var(--color-teal-50);
+  }
   .text-white {
     color: var(--color-white);
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
   }
   .ww\:mb-\[78px\] {
     @media (width >= 510px) {
@@ -561,11 +624,17 @@
   syntax: "*";
   inherits: false;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
       --tw-font-weight: initial;
+      --tw-outline-style: solid;
     }
   }
 }
